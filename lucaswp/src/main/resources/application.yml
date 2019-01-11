@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: micro.lucas.web
+  cloud:
+    consul:
+      host: ${consul.host}
+      port: ${consul.port}
+  datasource:
+    name: ${datasource.name}
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: ${datasource.db.driver}
+    url: ${datasource.db.url}
+    username: ${datasource.db.name}
+    password: ${datasource.db.password}
+    druid:
+      filters: stat
+      max-active: 20 #最大连接数
+      initial-size: 1 #初始化连接数
+      max-wait: 60000 #最大等待时间内
+      min-idle: 1 #最小连接数
+      time-between-eviction-runs-millis: 60000 #间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      min-evictable-idle-time-millis: 300000 #一个连接在池中最小生存的时间，单位是毫秒
+      validation-query: select 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 20
+#  mvc:
+#    static-path-pattern: /resource/ **
+#  freemarker:
+#    template-loader-path: classpath:/templates/
