@@ -1,10 +1,6 @@
 spring:
   application:
     name: micro.lucas.web
-  cloud:
-    consul:
-      host: ${consul.host}
-      port: ${consul.port}
   datasource:
     name: ${datasource.name}
     type: com.alibaba.druid.pool.DruidDataSource
@@ -14,18 +10,56 @@ spring:
     password: ${datasource.db.password}
     druid:
       filters: stat
-      max-active: 20 #最大连接数
-      initial-size: 1 #初始化连接数
-      max-wait: 60000 #最大等待时间内
-      min-idle: 1 #最小连接数
-      time-between-eviction-runs-millis: 60000 #间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
-      min-evictable-idle-time-millis: 300000 #一个连接在池中最小生存的时间，单位是毫秒
+      max-active: 20                                                  #最大连接数
+      initial-size: 1                                                 #初始化连接数
+      max-wait: 60000                                                 #最大等待时间内
+      min-idle: 1                                                     #最小连接数
+      time-between-eviction-runs-millis: 60000                        #间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      min-evictable-idle-time-millis: 300000                          #一个连接在池中最小生存的时间，单位是毫秒
       validation-query: select 'x'
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
       pool-prepared-statements: true
       max-open-prepared-statements: 20
+  aop:
+    proxy-target-class: true
+  cloud:
+    consul:
+      host: ${consul.host}
+      port: ${consul.port}
+      discovery:
+        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        service-name: ${spring.application.name}
+        register: true
+        prefer-ip-address: true
+        tags: urlprefix-/${spring.application.name}
+        health-check-path: /actuator/health
+        health-check-interval: 15s
+  zipkin:
+    sender:
+      type: rabbit
+    enabled: true
+    locator:
+      discovery:
+        enabled: true
+  sleuth:
+    sampler:
+      probability: 1.0
+  rabbitmq:
+    host: ${rabbitmq.host}                                            #rabbitmq地址
+    port: ${rabbitmq.port}                                            #rabbitmq端口
+    username: ${rabbitmq.username}                                    #rabbitmq登录用户
+    password: ${rabbitmq.password}                                    #rabbitmq登录密码
+    publisher-confirms: true
+
+#feign:
+#  hystrix:
+#    enabled: false
+#  httpclient:
+#    enabled: false
+#  okhttp:
+#    enabled: true
 #  mvc:
 #    static-path-pattern: /resource/ **
 #  freemarker:

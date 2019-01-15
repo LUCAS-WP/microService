@@ -15,7 +15,7 @@
 	<name>lucasBoot基础框架</name>
 	<properties>
 		<!-- springBoot基础依赖 -->
-		<spring.boot.version>2.1.1.RELEASE</spring.boot.version>
+		<spring.boot.version>2.1.2.RELEASE</spring.boot.version>
 		<!-- mysql数据库渠道依赖 -->
 		<mysql.version>5.1.45</mysql.version>
 		<!-- 分页插件依赖 -->
@@ -23,9 +23,14 @@
 		<!-- 服务文档框架依赖 -->
 		<swagger.version>2.9.2</swagger.version>
 		<!-- docker 服务地址 -->
-		<docker.image.prefix>192.168.2.203:19003/ylink/hibiscus</docker.image.prefix>
+		<!--<docker.image.prefix>192.168.2.203:19003/ylink/hibiscus</docker.image.prefix>-->
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -43,7 +48,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.version}</version>
 		</dependency>
-		<!--Mybatis-->
+		<!-- Mybatis -->
 		<dependency>
 			<groupId>tk.mybatis</groupId>
 			<artifactId>mapper-spring-boot-starter</artifactId>
@@ -117,18 +122,18 @@
 			<version>${swagger.version}</version>
 		</dependency>
 		<!-- 配置服务链路追踪 -->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud</groupId>-->
-			<!--<artifactId>spring-cloud-starter-stream-rabbit</artifactId>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud</groupId>-->
-			<!--<artifactId>spring-cloud-starter-sleuth</artifactId>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.cloud</groupId>-->
-			<!--<artifactId>spring-cloud-starter-zipkin</artifactId>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
