@@ -15,7 +15,7 @@
 	<name>lucasBoot基础框架</name>
 	<properties>
 		<!-- springBoot基础依赖 -->
-		<spring.boot.version>2.1.2.RELEASE</spring.boot.version>
+		<spring.boot.version>2.0.6.RELEASE</spring.boot.version>
 		<!-- mysql数据库渠道依赖 -->
 		<mysql.version>5.1.45</mysql.version>
 		<!-- 分页插件依赖 -->

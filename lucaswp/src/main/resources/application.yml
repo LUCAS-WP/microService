@@ -52,7 +52,12 @@ spring:
     username: ${rabbitmq.username}                                    #rabbitmq登录用户
     password: ${rabbitmq.password}                                    #rabbitmq登录密码
     publisher-confirms: true
-
+server:
+  port: 8101
+management:
+  endpoint:
+    health:
+      show-details: always
 #feign:
 #  hystrix:
 #    enabled: false
