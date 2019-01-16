@@ -4,8 +4,6 @@
  */
 package com.lucas.action;
 
-import com.lucas.service.AccountService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,13 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AccountController {
 
-    @Autowired
-    private AccountService accountService;
-
     @RequestMapping("/account")
     public void findAccount(){
         System.out.println("controller been view");
-        accountService.initAccount();
     }
 
 }
