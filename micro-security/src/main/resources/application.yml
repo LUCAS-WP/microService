@@ -58,13 +58,13 @@ management:
   endpoint:
     health:
       show-details: always
-#feign:
-#  hystrix:
-#    enabled: false
-#  httpclient:
-#    enabled: false
-#  okhttp:
-#    enabled: true
+feign:
+  hystrix:
+    enabled: false
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
 #  mvc:
 #    static-path-pattern: /resource/ **
 #  freemarker:

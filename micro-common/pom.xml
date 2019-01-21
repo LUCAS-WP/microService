@@ -5,7 +5,7 @@
 	<groupId>micro.service.common</groupId>
 	<artifactId>micro-service-parent</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<name>微服务基础框架</name>
+	<name>微服务基础框架-总体依赖</name>
 	<packaging>pom</packaging>
 	<description>micro service common</description>
 
@@ -16,11 +16,6 @@
 		<spring.cloud.version>Finchley.SR2</spring.cloud.version>
 		<logstash.version>5.2</logstash.version>
 	</properties>
-
-	<modules>
-		<module>micro-common-base</module>
-		<module>micro-service-comm-all</module>
-	</modules>
 
 	<dependencyManagement>
 		<!-- spring boot need base jar  -->

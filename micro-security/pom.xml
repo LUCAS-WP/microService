@@ -4,7 +4,7 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
 		<groupId>micro.service.common</groupId>
-		<artifactId>micro-service-parent</artifactId>
+		<artifactId>micro-cloud-common-parent</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
@@ -12,7 +12,7 @@
 	<groupId>com.lucas.boot</groupId>
 	<artifactId>lucasBoot</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<name>lucasBoot基础框架</name>
+	<name>微服务基础框架-安全认证模块</name>
 	<properties>
 		<!-- springBoot基础依赖 -->
 		<spring.boot.version>2.0.6.RELEASE</spring.boot.version>
@@ -26,6 +26,19 @@
 		<!--<docker.image.prefix>192.168.2.203:19003/ylink/hibiscus</docker.image.prefix>-->
 	</properties>
 	<dependencies>
+		<!--调用客户端-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-okhttp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.github.openfeign</groupId>
+			<artifactId>feign-httpclient</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

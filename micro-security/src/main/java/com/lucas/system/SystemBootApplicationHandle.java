@@ -7,6 +7,8 @@ package com.lucas.system;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * Created by LUCAS.
@@ -22,6 +24,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 //@EnableAutoConfiguration
 //@BootServiceRegister(basePackages = "com.lucas.*")
 @EnableDiscoveryClient
+//@EnableFeignClients(basePackages = {
+//        "com.micro.remote.client",
+//})
 public class SystemBootApplicationHandle {
 
     public static void main(String[] args) {
