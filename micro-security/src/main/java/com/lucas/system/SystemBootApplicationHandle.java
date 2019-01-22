@@ -18,15 +18,15 @@ import tk.mybatis.spring.annotation.MapperScan;
  *
  * @author lijiang
  */
-@SpringBootApplication
 //@ComponentScan(basePackages = "com.lucas.*")
 //@Configuration
 //@EnableAutoConfiguration
 //@BootServiceRegister(basePackages = "com.lucas.*")
+@SpringBootApplication
 @EnableDiscoveryClient
-//@EnableFeignClients(basePackages = {
-//        "com.micro.remote.client",
-//})
+@EnableFeignClients(basePackages = {
+        "com.micro.remote.client"
+})
 public class SystemBootApplicationHandle {
 
     public static void main(String[] args) {

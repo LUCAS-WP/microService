@@ -26,6 +26,18 @@
 		<!--<docker.image.prefix>192.168.2.203:19003/ylink/hibiscus</docker.image.prefix>-->
 	</properties>
 	<dependencies>
+		<!--基础包-->
+		<dependency>
+			<groupId>micro.service.common</groupId>
+			<artifactId>micro-cloud-common-parent</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<!--调用基础包-->
+		<dependency>
+			<groupId>micro.service.common</groupId>
+			<artifactId>micro-cloud-client</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 		<!--调用客户端-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

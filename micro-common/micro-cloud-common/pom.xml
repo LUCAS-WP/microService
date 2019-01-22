@@ -13,8 +13,8 @@
     <packaging>pom</packaging>
     
     <modules>
-        <module>micro-service-comm-all</module>
-        <module>micro-common-base</module>
+        <module>micro-cloud-common-base</module>
+        <module>micro-cloud-common-all</module>
     </modules>
 
     <!--<dependencies>-->
